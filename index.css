@@ -1,0 +1,144 @@
+body {
+    background-image: url(Wallpaper.jpg);
+    background-size: cover;
+    min-height: 100vh;
+    min-width: 100vw;
+    display: flex;
+    flex-direction: column; 
+    align-items: stretch;    
+    background-repeat: no-repeat;
+}
+#load {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    border: 1em solid black;
+    border-radius: 5%;
+    align-items: center;
+    padding: 1em;
+    justify-content: center;
+    z-index: 999;
+    height: 40%;
+    background-color: #69CF9A ; 
+}
+
+.Windows {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    z-index: 1;
+    border: 0.1em solid black;
+    border-radius: 5%;
+    align-items: center;
+    justify-content: center;
+    padding: 1%;
+    background-color: white;
+}
+#loadingBackground{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1em;
+    justify-content: center;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 999;
+    background-image: url(screen.png)
+}
+
+#NavBar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: black;
+    border: 0.313rem solid black;
+    border-radius: 2em;
+    background-color: bisque;
+    width: 100%;
+}
+.Handle {
+    display: flex;
+    border: 0.313rem solid black;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.5rem;
+    cursor: pointer;
+    background-color: aliceblue;
+}
+
+.close {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    width: 0.625rem;
+    height: 0.625rem;
+    cursor: pointer;
+}
+#apps {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1em;
+}
+#NoteContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    gap: 1em;
+    align-self: stretch;
+}
+
+#NoteBar {
+    height: 100%;
+    border: 0.188rem solid black;
+    margin: 0.125rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    min-width: 5rem;
+}
+
+#NoteContain {
+    display: flex;
+    flex-direction: column;
+    align-self: stretch;
+    width: 100%;
+}
+
+.ColumnCalc {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+ .ColumnCalc p {
+    margin: 0.75rem;
+    border: 0.188rem solid black;
+    border-radius: 0.313rem;
+    cursor: pointer;
+    background-color: aliceblue;
+    padding: 0.625rem;
+ }
+ #screen #smthg {
+    display: flex;
+    flex-direction: column;
+ }
+ #WindowsCalc {
+    min-width: 12.5rem;
+}
+#testt {
+    min-width: 3ch;        
+    min-height: 1.2em;    
+    text-align: center;
+}

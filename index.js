@@ -1,0 +1,150 @@
+const loading = document.getElementById("load");
+const loadingBackground = document.getElementById("loadingBackground")
+var TimeElement = document.getElementById("TimeElement")
+const WindowsElement = document.getElementById("Windows1")
+const NoteElement = document.getElementById("NoteContain")
+const NoteBar = document.getElementById("NoteBar")
+const screen = document.getElementById("screen")
+const CalcContain = document.getElementById("MyCalc")
+let resultat = ""
+let Timing = 6
+function load () {
+    loading.style.display = "none";
+    loadingBackground.style.display = "none";
+}
+function updateCountdown() {
+    Timing = Timing - 1
+    document.getElementById("testt").innerHTML = Timing
+    if (Timing==0) {
+        load()
+        clearInterval(updateCountdown)
+    }
+}
+setInterval(updateCountdown,1000)
+function updateTime() {
+    TimeElement.innerHTML = new Date();
+}
+setInterval(updateTime,1000);
+let dx, dy, actif = false;
+let fenetreActive = null;
+
+function attraper(handle, e) {
+    fenetreActive = handle.parentElement;
+    fenetreActive.style.transform = "none";
+    actif = true;
+    dx = e.clientX - fenetreActive.offsetLeft;
+    dy = e.clientY - fenetreActive.offsetTop;
+}
+
+document.onmousemove = function(e) {
+    if (actif) {
+        fenetreActive.style.left = (e.clientX - dx) + "px";
+        fenetreActive.style.top = (e.clientY - dy) + "px";
+    }
+}
+document.onmouseup = function() {
+    actif = false;
+};
+
+function CloseWindows(Closest) {
+    Closest.style.display = "none"
+}
+function OpenWindows(Openest) {
+    Openest.style.display = "flex"
+}
+function ZindexUp(WichID , NoId1 , NoId2) {
+    const TestIndex = WichID.style.zIndex
+    WichID.style.zIndex = 20
+    NoId1.style.zIndex = 0
+    NoId2.style.zIndex = 0
+}
+var content = [
+    {
+        title: "Advice 1",
+        date: "28/09/26",
+        content: `<div id="NoteDescription" style="border: 0.125rem solid black; background-color: aliceblue">Welcome on my PlantNotes ! Here we can see a location where you can edit memo.</div>
+                   <div id="NoteWriting" style="border: 0.125rem solid black; background-color: aliceblue; margin: 12px;" contenteditable="true">Always water yours plants and vegetables , mainly in summer with the high temperature !</div>`
+    },
+    {
+        title: "Advice 2",
+        date: "29/09/26",
+        content: `<div id="NoteDescription" style="border: 0.125rem solid black; background-color: aliceblue; margin: 0.75rem;" contenteditable="true">To preserve tomatoes , keep in your mind that you must'nt water the leaf !</div>`
+    }
+]
+function Note(index){
+    NoteElement.innerHTML = content[index].content
+}
+Note(0)
+function remplirColonne() {
+    for (let i = 0; i < content.length; i++) {
+        const note = content[i];
+
+        const bloc = document.createElement("div");
+        bloc.innerHTML = `<p contenteditable="true" style="background-color: aliceblue">${note.title}</p><p style="font-size:12px; background-color: aliceblue" contenteditable="true">${note.date}</p>`;
+        bloc.style.cursor = "pointer";
+        bloc.style.borderBottom = "1px solid black";
+
+        bloc.addEventListener("click", function() {
+            Note(i);
+        });
+
+        NoteBar.appendChild(bloc);
+    }
+}
+remplirColonne();
+
+function MakeCalc(Number){
+    resultat=resultat + Number.innerHTML;
+    document.getElementById("screen").innerHTML = resultat;
+}
+function Calc() {
+     resultat = eval(resultat).toString();
+     document.getElementById("screen").innerHTML = resultat;
+}
+function ClearCalc() {
+    resultat = "";
+    document.getElementById("screen").innerHTML = "";
+}
+
+var Cal = [
+    {
+        title: "Calculator",
+        date: "28/09/26",
+        content: `<div>
+ <div id="CalcContainer" style="margin-top: 5px; display: flex; flex-direction: column; justify-content: center; align-items: center; background-color: green">
+  <div id="screen" style="margin: 0.5rem; border: black solid 0.188rem; min-height: 2.5rem; width: 100%; box-sizing: border-box; justify-content: center; align-items: center; background-color: aliceblue">Click on AC between each operation</div>
+   <div id="smthg" style="display: flex; flex-direction: row; justify-content: center;">
+  <div id="column1" class="ColumnCalc">
+    <p id="1" onclick="MakeCalc(this)">1</p>
+    <p id="2" onclick="MakeCalc(this)">2</p>
+    <p id="3" onclick="MakeCalc(this)">3</p>
+    <p id="AC" onclick="ClearCalc()">AC</p>
+  </div>
+  <div id="column2" class="ColumnCalc">
+    <p id="4" onclick="MakeCalc(this)">4</p>
+    <p id="5" onclick="MakeCalc(this)">5</p>
+    <p id="6" onclick="MakeCalc(this)">6</p>
+    <p id="0" onclick="MakeCalc(this)">0</p>
+  </div>
+  <div id="column3" class="ColumnCalc">
+    <p id="7" onclick="MakeCalc(this)">7</p>
+    <p id="8" onclick="MakeCalc(this)">8</p>
+    <p id="9" onclick="MakeCalc(this)">9</p>
+    <p id="enter" onclick="Calc()">Enter</p>
+  </div>
+  <div id="column4" class="ColumnCalc">
+    <p id="+" onclick="MakeCalc(this)">+</p>
+    <p id="-" onclick="MakeCalc(this)">-</p>
+    <p id="*" onclick="MakeCalc(this)">*</p>
+    <p id="/" onclick="MakeCalc(this)">/</p>
+  </div>
+</div>
+</div>
+ </div>`
+    },
+] 
+ function Calculator(index){
+    CalcContain.innerHTML = Cal[index].content
+
+ }
+ Calculator(0)

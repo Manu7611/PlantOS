@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="index.css">
+  <body>
+    <div id="loadingBackground">
+    <div id="load" onclick="load(0)" onload="load(5000)">
+  <h1>Welcome on PlantOS</h1>
+  <h2>Loading...</h2>
+  <h3>click to continue</h3>
+  <h4 id="testt"></h4>
+  <img src="plant.png">
+    </div>
+    </div>
+    <div id="Windows1" class="Windows" style="background-color: greenyellow;" onclick="ZindexUp(Windows1 , WindowsCalc , WindowsNote)">
+      <div id="WindowsHandle" class="Handle" onmousedown="attraper(this, event)">Welcome !<img src="Close.jpg" class="close" onclick=CloseWindows(Windows1)></div>
+      Here we can see all of my apps!
+    </div>
+    <div id="NavBar">
+    <p style="margin-left: 5%; cursor: pointer;" onclick="OpenWindows(Windows1)">Plant OS</p><p id="TimeElement">Date</p>
+    <div style="display: flex; align-items: center; gap: 0.5em; margin-right: 1em;">
+    <img src="wifi icon.png" style="height: 1em; width: 1em;"></div>
+    </div>
+    <div id="apps" style="justify-content: flex-start; align-items: flex-start;">
+      <img src="Notes.png" style="height: 32px; width: 32px; justify-content: flex-start; flex-direction: column; display: flex;" onclick="OpenWindows(WindowsNote)">
+      <p>Notes</p>
+    <div id="WindowsNote" class="Windows" style="display: none; background-color: goldenrod;" onclick="ZindexUp(WindowsNote , Windows1 , WindowsCalc)">
+ <div id="NoteHandle" class="Handle" onmousedown="attraper(this, event)">
+   Notes <img src="Close.jpg" class="close" onclick=CloseWindows(WindowsNote)>
+ </div>
+ <div id="NoteContainer" style="margin-top: 5px;">
+  <div id="NoteBar" style="background-color: aliceblue;"></div>
+  <div id="NoteContain"></div>
+ </div>
+</div>
+<img src="Calc.png" style="height: 32px; width: 32px; justify-content: flex-start; flex-direction: column; display: flex;" onclick="OpenWindows(WindowsCalc)">
+      <p>Calc</p>
+    <div id="WindowsCalc" class="Windows" style="display: none; background-color: green;" onclick="ZindexUp(WindowsCalc , Windows1 , WindowsNote)">
+ <div id="CalcHandle" class="Handle" onmousedown="attraper(this, event)">
+   Calculator<img src="Close.jpg" class="close" onclick=CloseWindows(WindowsCalc)>
+ </div>
+ <div id="MyCalc"></div>
+</div>
+</div>
+    <script src="index.js"></script>
+  </body>
+</html>
