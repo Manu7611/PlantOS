@@ -12,6 +12,6 @@ It's a little project of OS website made with hackclub tuto : https://jams.hackc
 - A beautiful Plant theme
 
 ## Photos :
-![Welcome Image](Photo/Welcome.png)
-![Start Image](Photo/Start.png)
-![Apps Image](Photo/apps.png)
+![Welcome Image](Photos/Welcome.png)
+![Start Image](Photos/Start.png)
+![Apps Image](Photos/apps.png)
