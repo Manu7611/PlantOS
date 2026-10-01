@@ -1,4 +1,5 @@
 # Plant OS :
+![Apps Image](Photos/apps.png)
 A tiny WebOS project made with HTML and JS
 
 ## About:
