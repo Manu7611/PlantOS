@@ -1,5 +1,5 @@
 body {
-    background-image: url(img\Wallpaper.jpg);
+    background-image: url("img/Wallpaper.jpg");
     background-size: cover;
     min-height: 100vh;
     min-width: 100vw;
@@ -50,7 +50,7 @@ body {
     left: 0;
     height: 100vh;
     z-index: 999;
-    background-image: url(img\screen.png)
+    background-image: url(img/screen.png)
 }
 
 #NavBar {
