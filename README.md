@@ -1,8 +1,11 @@
 # Plant OS :
 ![Apps Image](Photos/apps.png)
 A tiny WebOS project made with HTML and JS
-
-<a href="https://manu7611.github.io/PlantOS/" ><img src="https://www.pngkey.com/png/full/137-1378034_button-icon-png.png" alt="Test Me !"></a>
+<p align="center">
+  <a href="https://manu7611.github.io/PlantOS/" ><img src="https://www.pngkey.com/png/full/137-1378034_button-icon-png.png" alt="Test Me !"></a><br>
+    <b>Test Me !</b>
+  </a>
+</p>
 
 ## About:
 It's a little project of OS website made with hackclub tuto : https://jams.hackclub.com/batch/webOS
