@@ -1,23 +1,25 @@
 const loading = document.getElementById("load");
-const loadingBackground = document.getElementById("loadingBackground")
-var TimeElement = document.getElementById("TimeElement")
-const WindowsElement = document.getElementById("Windows1")
-const NoteElement = document.getElementById("NoteContain")
-const NoteBar = document.getElementById("NoteBar")
-const screen = document.getElementById("screen")
-const CalcContain = document.getElementById("MyCalc")
-let resultat = ""
-let Timing = 6
+const loadingBackground = document.getElementById("loadingBackground");
+var TimeElement = document.getElementById("TimeElement");
+const WindowsElement = document.getElementById("Windows1");
+const NoteElement = document.getElementById("NoteContain");
+const NoteBar = document.getElementById("NoteBar");
+const screen = document.getElementById("screen");
+const CalcContain = document.getElementById("MyCalc");
+let resultat = "";
+let Timing = 6;
+let research = "";
+let GoogleWEB = "https://www.google.com/search?q=";
 function load () {
     loading.style.display = "none";
     loadingBackground.style.display = "none";
 }
 function updateCountdown() {
-    Timing = Timing - 1
-    document.getElementById("testt").innerHTML = Timing
+    Timing = Timing - 1;
+    document.getElementById("testt").innerHTML = Timing;
     if (Timing==0) {
-        load()
-        clearInterval(updateCountdown)
+        load();
+        clearInterval(updateCountdown);
     }
 }
 setInterval(updateCountdown,1000)
@@ -47,16 +49,17 @@ document.onmouseup = function() {
 };
 
 function CloseWindows(Closest) {
-    Closest.style.display = "none"
+    Closest.style.display = "none";
 }
 function OpenWindows(Openest) {
-    Openest.style.display = "flex"
+    Openest.style.display = "flex";
 }
-function ZindexUp(WichID , NoId1 , NoId2) {
-    const TestIndex = WichID.style.zIndex
-    WichID.style.zIndex = 20
-    NoId1.style.zIndex = 0
-    NoId2.style.zIndex = 0
+function ZindexUp(WichID , NoId1 , NoId2 , NoId3) {
+    const TestIndex = WichID.style.zIndex;
+    WichID.style.zIndex = 20;
+    NoId1.style.zIndex = 0;
+    NoId2.style.zIndex = 0;
+    NoId3.style.zIndex = 0;
 }
 var content = [
     {
@@ -72,7 +75,7 @@ var content = [
     }
 ]
 function Note(index){
-    NoteElement.innerHTML = content[index].content
+    NoteElement.innerHTML = content[index].content;
 }
 Note(0)
 function remplirColonne() {
@@ -144,7 +147,11 @@ var Cal = [
     },
 ] 
  function Calculator(index){
-    CalcContain.innerHTML = Cal[index].content
-
+    CalcContain.innerHTML = Cal[index].content;
  }
  Calculator(0)
+function search(){
+    const SaisieUtilisateur = document.getElementById("google").value;
+    researchhh = GoogleWEB + SaisieUtilisateur
+    window.open(researchhh ,'_blank')
+}
