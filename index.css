@@ -66,6 +66,7 @@ body {
 .Handle {
     display: flex;
     border: 0.313rem solid black;
+    border-radius: 10px;
     width: 100%;
     align-items: center;
     justify-content: center;
@@ -101,6 +102,7 @@ body {
 #NoteBar {
     height: 100%;
     border: 0.188rem solid black;
+    border-radius: 10px;
     margin: 0.125rem;
     display: flex;
     flex-direction: column;
