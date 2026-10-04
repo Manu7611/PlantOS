@@ -6,6 +6,7 @@ const NoteElement = document.getElementById("NoteContain");
 const NoteBar = document.getElementById("NoteBar");
 const screen = document.getElementById("screen");
 const CalcContain = document.getElementById("MyCalc");
+document.getElementById("Sombre").checked = false;
 let resultat = "";
 let Timing = 6;
 let research = "";
@@ -119,28 +120,28 @@ var Cal = [
   <div id="screen" class="DarkMode" style="margin: 0.5rem; border: black solid 0.188rem; min-height: 2.5rem; width: 100%; box-sizing: border-box; justify-content: center; align-items: center; background-color: aliceblue">Click on AC between each operation</div>
    <div id="smthg" style="display: flex; flex-direction: row; justify-content: center;">
   <div id="column1" class="ColumnCalc">
-    <p id="1" onclick="MakeCalc(this)">1</p>
-    <p id="2" onclick="MakeCalc(this)">2</p>
-    <p id="3" onclick="MakeCalc(this)">3</p>
-    <p id="AC" onclick="ClearCalc()">AC</p>
+    <p id="1" class="DarkMode" onclick="MakeCalc(this)">1</p>
+    <p id="2" class="DarkMode" onclick="MakeCalc(this)">2</p>
+    <p id="3" class="DarkMode" onclick="MakeCalc(this)">3</p>
+    <p id="AC" class="DarkMode" onclick="ClearCalc()">AC</p>
   </div>
   <div id="column2" class="ColumnCalc">
-    <p id="4" onclick="MakeCalc(this)">4</p>
-    <p id="5" onclick="MakeCalc(this)">5</p>
-    <p id="6" onclick="MakeCalc(this)">6</p>
-    <p id="0" onclick="MakeCalc(this)">0</p>
+    <p id="4" class="DarkMode" onclick="MakeCalc(this)">4</p>
+    <p id="5" class="DarkMode" onclick="MakeCalc(this)">5</p>
+    <p id="6" class="DarkMode" onclick="MakeCalc(this)">6</p>
+    <p id="0"  class="DarkMode" onclick="MakeCalc(this)">0</p>
   </div>
   <div id="column3" class="ColumnCalc">
-    <p id="7" onclick="MakeCalc(this)">7</p>
-    <p id="8" onclick="MakeCalc(this)">8</p>
-    <p id="9" onclick="MakeCalc(this)">9</p>
-    <p id="enter" onclick="Calc()">Enter</p>
+    <p id="7" class="DarkMode" onclick="MakeCalc(this)">7</p>
+    <p id="8" class="DarkMode" onclick="MakeCalc(this)">8</p>
+    <p id="9" class="DarkMode" onclick="MakeCalc(this)">9</p>
+    <p id="enter" class="DarkMode" onclick="Calc()">Enter</p>
   </div>
   <div id="column4" class="ColumnCalc">
-    <p id="+" onclick="MakeCalc(this)">+</p>
-    <p id="-" onclick="MakeCalc(this)">-</p>
-    <p id="*" onclick="MakeCalc(this)">*</p>
-    <p id="/" onclick="MakeCalc(this)">/</p>
+    <p id="+" class="DarkMode" onclick="MakeCalc(this)">+</p>
+    <p id="-" class="DarkMode" onclick="MakeCalc(this)">-</p>
+    <p id="*" class="DarkMode" onclick="MakeCalc(this)">*</p>
+    <p id="/" class="DarkMode" onclick="MakeCalc(this)">/</p>
   </div>
 </div>
 </div>
@@ -163,6 +164,7 @@ function BlackTheme() {
             themes.style.backgroundColor = "black"
             document.body.style.color = "white"
             document.body.style.backgroundImage = "url('img/DarkWallpaper.jpg')";
+            document.getElementById("google").style.color = "white"
         }
         else{
             themes.style.backgroundColor ="aliceblue"
