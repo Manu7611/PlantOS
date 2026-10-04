@@ -54,24 +54,25 @@ function CloseWindows(Closest) {
 function OpenWindows(Openest) {
     Openest.style.display = "flex";
 }
-function ZindexUp(WichID , NoId1 , NoId2 , NoId3) {
+function ZindexUp(WichID , NoId1 , NoId2 , NoId3 , Noid4) {
     const TestIndex = WichID.style.zIndex;
     WichID.style.zIndex = 20;
     NoId1.style.zIndex = 0;
     NoId2.style.zIndex = 0;
     NoId3.style.zIndex = 0;
+    Noid4.style.zIndex = 0;
 }
 var content = [
     {
         title: "Advice 1",
         date: "28/09/26",
-        content: `<div id="NoteDescription" style="border: 0.125rem solid black; background-color: aliceblue">Welcome on my PlantNotes ! Here we can see a location where you can edit memo.</div>
-                   <div id="NoteWriting" style="border: 0.125rem solid black; background-color: aliceblue; margin: 12px;" contenteditable="true">Always water yours plants and vegetables , mainly in summer with the high temperature !</div>`
+        content: `<div id="NoteDescription" class="DarkMode" style="border: 0.125rem solid black; background-color: aliceblue">Welcome on my PlantNotes ! Here we can see a location where you can edit memo.</div>
+                   <div id="NoteWriting" class="DarkMode" style="border: 0.125rem solid black; background-color: aliceblue; margin: 12px;" contenteditable="true">Always water yours plants and vegetables , mainly in summer with the high temperature !</div>`
     },
     {
         title: "Advice 2",
         date: "29/09/26",
-        content: `<div id="NoteDescription" style="border: 0.125rem solid black; background-color: aliceblue; margin: 0.75rem;" contenteditable="true">To preserve tomatoes , keep in your mind that you must'nt water the leaf !</div>`
+        content: `<div id="NoteDescription"  class="DarkMode"style="border: 0.125rem solid black; background-color: aliceblue; margin: 0.75rem;" contenteditable="true">To preserve tomatoes , keep in your mind that you must'nt water the leaf !</div>`
     }
 ]
 function Note(index){
@@ -83,7 +84,7 @@ function remplirColonne() {
         const note = content[i];
 
         const bloc = document.createElement("div");
-        bloc.innerHTML = `<p contenteditable="true" style="background-color: aliceblue">${note.title}</p><p style="font-size:12px; background-color: aliceblue" contenteditable="true">${note.date}</p>`;
+        bloc.innerHTML = `<p contenteditable="true" class="DarkMode" style="background-color: aliceblue">${note.title}</p><p style="font-size:12px; background-color: aliceblue" class="DarkMode" contenteditable="true">${note.date}</p>`;
         bloc.style.cursor = "pointer";
         bloc.style.borderBottom = "1px solid black";
 
@@ -115,7 +116,7 @@ var Cal = [
         date: "28/09/26",
         content: `<div>
  <div id="CalcContainer" style="margin-top: 5px; display: flex; flex-direction: column; justify-content: center; align-items: center; background-color: green">
-  <div id="screen" style="margin: 0.5rem; border: black solid 0.188rem; min-height: 2.5rem; width: 100%; box-sizing: border-box; justify-content: center; align-items: center; background-color: aliceblue">Click on AC between each operation</div>
+  <div id="screen" class="DarkMode" style="margin: 0.5rem; border: black solid 0.188rem; min-height: 2.5rem; width: 100%; box-sizing: border-box; justify-content: center; align-items: center; background-color: aliceblue">Click on AC between each operation</div>
    <div id="smthg" style="display: flex; flex-direction: row; justify-content: center;">
   <div id="column1" class="ColumnCalc">
     <p id="1" onclick="MakeCalc(this)">1</p>
@@ -154,4 +155,19 @@ function search(){
     const SaisieUtilisateur = document.getElementById("google").value;
     researchhh = GoogleWEB + SaisieUtilisateur
     window.open(researchhh ,'_blank')
+}
+function BlackTheme() {
+    let theme = document.querySelectorAll(".DarkMode")
+    theme.forEach(function(themes){
+        if (document.getElementById("Sombre").checked) {
+            themes.style.backgroundColor = "black"
+            document.body.style.color = "white"
+            document.body.style.backgroundImage = "url('img/DarkWallpaper.jpg')";
+        }
+        else{
+            themes.style.backgroundColor ="aliceblue"
+            document.body.style.color = "black"
+            document.body.style.backgroundImage = "url('img/Wallpaper.jpg')";
+        }
+    });
 }

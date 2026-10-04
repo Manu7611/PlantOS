@@ -11,8 +11,8 @@
   <img src="img\plant.png">
     </div>
     </div>
-    <div id="Windows1" class="Windows" style="background-color: greenyellow;" onclick="ZindexUp(Windows1 , WindowsCalc , WindowsNote , WindowsWeb)">
-      <div id="WindowsHandle" class="Handle" onmousedown="attraper(this, event)">Welcome !<img src="img\Close.jpg" class="close" onclick=CloseWindows(Windows1)></div>
+    <div id="Windows1" class="Windows" style="background-color: greenyellow;" onclick="ZindexUp(Windows1 , WindowsCalc , WindowsNote , WindowsWeb, WindowsSettings)">
+      <div id="WindowsHandle" class="Handle DarkMode" onmousedown="attraper(this, event)">Welcome !<img src="img\Close.jpg" class="close" onclick=CloseWindows(Windows1)></div>
       Here we can see all of my apps!
     </div>
     <div id="NavBar">
@@ -21,33 +21,44 @@
     <img src="img\WifiIcon.png" style="height: 1em; width: 1em;"></div>
     </div>
     <div id="apps" style="justify-content: flex-start; align-items: flex-start;">
-      <img src="img\Notes.png" style="height: 32px; width: 32px; justify-content: flex-start; flex-direction: column; display: flex;" onclick="OpenWindows(WindowsNote)">
+      <div id=Icons style="display: flex; align-items: center; flex-direction: column;"><img src="img\Notes.png" style="height: 32px; width: 32px; justify-content: flex-start; flex-direction: column; display: flex;" onclick="OpenWindows(WindowsNote)">
       <p>Notes</p>
-    <div id="WindowsNote" class="Windows" style="display: none; background-color: goldenrod;" onclick="ZindexUp(WindowsNote , Windows1 , WindowsCalc , WindowsWeb)">
- <div id="NoteHandle" class="Handle" onmousedown="attraper(this, event)">
+      <img src="img\Calc.png" style="height: 32px; width: 32px; justify-content: flex-start; flex-direction: column; display: flex;" onclick="OpenWindows(WindowsCalc)">
+      <p>Calc</p>
+      <img src="img\Web.png" style="height: 32px; width: 32px; justify-content: flex-start; flex-direction: column; display: flex;" onclick="OpenWindows(WindowsWeb)">
+      <p>Web</p>
+      <img src="img\Settings.png" style="height: 32px; width: 32px; justify-content: flex-start; flex-direction: column; display: flex;" onclick="OpenWindows(WindowsSettings)">
+      <p>Settings</p></div>
+    <div id="WindowsNote" class="Windows" style="display: none; background-color: goldenrod;" onclick="ZindexUp(WindowsNote , Windows1 , WindowsCalc , WindowsWeb , WindowsSettings)">
+ <div id="NoteHandle" class="Handle DarkMode" onmousedown="attraper(this, event)">
    Notes <img src="img\Close.jpg" class="close" onclick=CloseWindows(WindowsNote)>
  </div>
  <div id="NoteContainer" style="margin-top: 5px;">
-  <div id="NoteBar" style="background-color: aliceblue;"></div>
+  <div id="NoteBar" style="background-color: aliceblue;" class="DarkMode"></div>
   <div id="NoteContain"></div>
  </div>
 </div>
-<img src="img\Calc.png" style="height: 32px; width: 32px; justify-content: flex-start; flex-direction: column; display: flex;" onclick="OpenWindows(WindowsCalc)">
-      <p>Calc</p>
-    <div id="WindowsCalc" class="Windows" style="display: none; background-color: green;" onclick="ZindexUp(WindowsCalc , Windows1 , WindowsNote , WindowsWeb)">
- <div id="CalcHandle" class="Handle" onmousedown="attraper(this, event)">
+    <div id="WindowsCalc" class="Windows" style="display: none; background-color: green;" onclick="ZindexUp(WindowsCalc , Windows1 , WindowsNote , WindowsWeb , WindowsSettings)">
+ <div id="CalcHandle" class="Handle DarkMode" onmousedown="attraper(this, event)">
    Calculator<img src="img\Close.jpg" class="close" onclick=CloseWindows(WindowsCalc)>
  </div>
  <div id="MyCalc"></div>
 </div>
-<img src="img\Web.png" style="height: 32px; width: 32px; justify-content: flex-start; flex-direction: column; display: flex;" onclick="OpenWindows(WindowsWeb)">
-      <p>Web</p>
-      <div id="WindowsWeb" class="Windows" style="display: none; background-color: yellow;" onclick="ZindexUp(WindowsCalc , Windows1 , WindowsNote , WindowsWeb)">
- <div id="WebHandle" class="Handle" onmousedown="attraper(this, event)">
+      <div id="WindowsWeb" class="Windows" style="display: none; background-color: yellow;" onclick="ZindexUp(WindowsCalc , Windows1 , WindowsNote , WindowsWeb , WindowsSettings)">
+ <div id="WebHandle" class="Handle DarkMode" onmousedown="attraper(this, event)">
    Web<img src="img\Close.jpg" class="close" onclick=CloseWindows(WindowsWeb)>
  </div>
  <div id="MyWeb">
-  <div style="display: flex; flex-direction: row;"><input type="text" id="google" style="display: flex; align-items: flex-start; border: solid black 2px; padding: 0.5rem ; margin: 0.25rem; margin-top: 0.5rem;"><div style=" display:flex; align-items: flex-end; margin: 0.25rem; margin-top: 0.5rem; border: solid black 2px; cursor: pointer;border-radius: 50%; background-color: aliceblue; padding: 0.5rem" onclick="search()">OK</div></div>
+  <div style="display: flex; flex-direction: row;"><input type="text" id="google" style="display: flex; align-items: flex-start; border: solid black 2px; padding: 0.5rem ; margin: 0.25rem; margin-top: 0.5rem;"><div style=" display:flex; align-items: flex-end; margin: 0.25rem; margin-top: 0.5rem; border: solid black 2px; cursor: pointer;border-radius: 50%; background-color: aliceblue; padding: 0.5rem" onclick="search()" class="DarkMode">OK</div></div>
+ </div>
+</div>
+      <div id="WindowsSettings" class="Windows" style="display: none; background-color: #ABC257;" onclick="ZindexUp(WindowsSettings , WindowsCalc , Windows1 , WindowsNote , WindowsWeb)">
+ <div id="SettingHandle" class="Handle DarkMode" onmousedown="attraper(this, event)">
+   Settings<img src="img\Close.jpg" class="close" onclick=CloseWindows(WindowsSettings)>
+ </div>
+ <div id="MySettings" style="display: flex;flex-direction: row;">
+  <p>Mode Sombre</p>
+  <input type="checkbox" id="Sombre" onclick="BlackTheme()">
  </div>
 </div>
 </div>
