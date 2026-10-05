@@ -41,13 +41,13 @@ function attraper(handle, e) {
     dy = e.clientY - fenetreActive.offsetTop;
 }
 
-document.onmousemove = function(e) {
+document.onpointermove = function(e) {
     if (actif) {
         fenetreActive.style.left = (e.clientX - dx) + "px";
         fenetreActive.style.top = (e.clientY - dy) + "px";
     }
 }
-document.onmouseup = function() {
+document.onpointerup = function() {
     actif = false;
 };
 

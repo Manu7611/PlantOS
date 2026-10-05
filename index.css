@@ -68,11 +68,21 @@ body {
     border: 0.313rem solid black;
     border-radius: 10px;
     width: 100%;
-    align-items: center;
-    justify-content: center;
     margin-top: 0.5rem;
     cursor: pointer;
     background-color: aliceblue;
+    touch-action: none;
+    justify-content: flex-end;
+    align-items: center;
+}
+.CloseButton {
+    padding-left: 10px;
+    padding-right: 15px;
+    border: solid black 0.001rem;
+    transition: background-color 0.2s;
+}
+.CloseButton:hover {
+    background-color: red;
 }
 
 .close {
