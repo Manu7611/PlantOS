@@ -157,21 +157,21 @@ var Cal = [
  Calculator(0)
 function search(){
     const SaisieUtilisateur = document.getElementById("google").value;
-    researchhh = GoogleWEB + SaisieUtilisateur
+    researchhh = GoogleWEB + SaisieUtilisateur;
     window.open(researchhh ,'_blank')
 }
 function BlackTheme() {
     let theme = document.querySelectorAll(".DarkMode")
     theme.forEach(function(themes){
         if (document.getElementById("Sombre").checked) {
-            themes.style.backgroundColor = "black"
-            document.body.style.color = "white"
+            themes.style.backgroundColor = "black";
+            document.body.style.color = "white";
             document.body.style.backgroundImage = "url('img/DarkWallpaper.jpg')";
-            document.getElementById("google").style.color = "white"
+            document.getElementById("google").style.color = "white";
         }
         else{
-            themes.style.backgroundColor ="aliceblue"
-            document.body.style.color = "black"
+            themes.style.backgroundColor ="aliceblue";
+            document.body.style.color = "black";
             document.body.style.backgroundImage = "url('img/Wallpaper.jpg')";
         }
     });
