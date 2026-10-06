@@ -11,7 +11,7 @@
   <img src="img\plant.png">
     </div>
     </div>
-    <div id="Windows1" class="Windows" style="background-color: greenyellow;" onclick="ZindexUp(Windows1 , WindowsCalc , WindowsNote , WindowsWeb, WindowsSettings)">
+    <div id="Windows1" class="Windows" style="background-color: greenyellow;" onclick="ZindexUp(Windows1 , WindowsCalc , WindowsNote , WindowsWeb, WindowsSettings , WindowsPictures)">
       <div id="WindowsHandle" class="Handle DarkMode" onpointerdown="attraper(this, event)">Welcome !<span style="visibility: hidden; width: 1.875rem;"></span><div class="CloseButton" onclick="CloseWindows(Windows1)">X</div></div>
       Here we can see all of my apps!
     </div>
@@ -28,8 +28,11 @@
       <img src="img\Web.png" style="height: 32px; width: 32px; justify-content: flex-start; flex-direction: column; display: flex;" onclick="OpenWindows(WindowsWeb)">
       <p>Web</p>
       <img src="img\Settings.png" style="height: 32px; width: 32px; justify-content: flex-start; flex-direction: column; display: flex;" onclick="OpenWindows(WindowsSettings)">
-      <p>Settings</p></div>
-    <div id="WindowsNote" class="Windows" style="display: none; background-color: goldenrod;" onclick="ZindexUp(WindowsNote , Windows1 , WindowsCalc , WindowsWeb , WindowsSettings)">
+      <p>Settings</p>
+      <img src="img\Pictures.png" style="height: 32px; width: 32px; justify-content: flex-start; flex-direction: column; display: flex;" onclick="OpenWindows(WindowsPictures)">
+      <p>Plants Pictures</p>
+    </div>
+    <div id="WindowsNote" class="Windows" style="display: none; background-color: goldenrod;" onclick="ZindexUp(WindowsNote , Windows1 , WindowsCalc , WindowsWeb , WindowsSettings, WindowsPictures)">
  <div id="NoteHandle" class="Handle DarkMode" onpointerdown="attraper(this, event)">
    Notes <span style="visibility: hidden; width: 19.375rem;"></span><div class="CloseButton" onclick="CloseWindows(WindowsNote)">X</div>
  </div>
@@ -38,13 +41,13 @@
   <div id="NoteContain"></div>
  </div>
 </div>
-    <div id="WindowsCalc" class="Windows" style="display: none; background-color: green;" onclick="ZindexUp(WindowsCalc , Windows1 , WindowsNote , WindowsWeb , WindowsSettings)">
+    <div id="WindowsCalc" class="Windows" style="display: none; background-color: green;" onclick="ZindexUp(WindowsCalc , Windows1 , WindowsNote , WindowsWeb , WindowsSettings, WindowsPictures)">
  <div id="CalcHandle" class="Handle DarkMode" onpointerdown="attraper(this, event)">
    Calculator<span style="visibility: hidden; width: 4.375rem;"></span><div class="CloseButton" onclick="CloseWindows(WindowsCalc)">X</div>
  </div>
  <div id="MyCalc"></div>
 </div>
-      <div id="WindowsWeb" class="Windows" style="display: none; background-color: yellow;" onclick="ZindexUp(WindowsCalc , Windows1 , WindowsNote , WindowsWeb , WindowsSettings)">
+      <div id="WindowsWeb" class="Windows" style="display: none; background-color: yellow;" onclick="ZindexUp(WindowsCalc , Windows1 , WindowsNote , WindowsWeb , WindowsSettings, WindowsPictures)">
  <div id="WebHandle" class="Handle DarkMode" onpointerdown="attraper(this, event)">
    Web<span style="visibility: hidden; width: 4.688rem;"></span><div class="CloseButton" onclick="CloseWindows(WindowsWeb)">X</div>
  </div>
@@ -52,7 +55,7 @@
   <div style="display: flex; flex-direction: row;"><input type="text" id="google" class="DarkMode" style="display: flex; align-items: flex-start; border: solid black 2px; padding: 0.5rem ; margin: 0.25rem; margin-top: 0.5rem; border-radius: 10px;"><div style=" display:flex; align-items: flex-end; margin: 0.25rem; margin-top: 0.5rem; border: solid black 2px; cursor: pointer;border-radius: 50%; background-color: aliceblue; padding: 0.5rem" onclick="search()" class="DarkMode">OK</div></div>
  </div>
 </div>
-      <div id="WindowsSettings" class="Windows" style="display: none; background-color: #ABC257;" onclick="ZindexUp(WindowsSettings , WindowsCalc , Windows1 , WindowsNote , WindowsWeb)">
+      <div id="WindowsSettings" class="Windows" style="display: none; background-color: #ABC257;" onclick="ZindexUp(WindowsSettings , WindowsCalc , Windows1 , WindowsNote , WindowsWeb, WindowsPictures)">
  <div id="SettingHandle" class="Handle DarkMode" onpointerdown="attraper(this, event)">
    Settings<span style="visibility: hidden; width: 0.313rem;"></span><div class="CloseButton" onclick="CloseWindows(WindowsSettings)">X</div>
  </div>
@@ -60,6 +63,27 @@
   <p>Mode Sombre</p>
   <input type="checkbox" id="Sombre" onclick="BlackTheme()">
  </div>
+</div>
+<div id="WindowsPictures" class="Windows" style="display: none; background-color: #ABC257;" onclick="ZindexUp(WindowsPictures , WindowsCalc , Windows1 , WindowsNote , WindowsWeb, WindowsSettings)">
+ <div id="PicturesHandle" class="Handle DarkMode" onpointerdown="attraper(this, event)">
+   Plants Pictures<span style="visibility: hidden; width: 2rem;"></span><div class="CloseButton" onclick="CloseWindows(WindowsPictures)">X</div>
+ </div>
+ <div id="MyPictures">
+  <div id="InitialPhotos" style="display: flex; flex-direction: column; justify-content: center; align-items: center; background-color: aliceblue;">
+  <div class="Photos" style="padding-top: 0px; border-radius: 15%;"><p> This is a wiki of pictures of plants !</p></div>
+  <div id="Photo1" class="Photos" onclick="OpenPhoto(BigSunflower,BigMuguet,BigPissenlit,BigRose,BigOrchid)"><img src="PicturesPlants\Photo1.jpg" style="height: 40px; margin-left: 10px;"><p style="margin-left: 10px;">SunFlower</p><Span style="visibility: hidden; width: 40px;"></Span><div style="display: flex; flex-direction: column;"><p style="margin: 0px;">Date:06/10</p><p style="margin: 0px;">Taille: 56ko</p></div></div>
+  <div id="Photo2" class="Photos" onclick="OpenPhoto(BigMuguet,BigSunflower,BigPissenlit,BigRose,BigOrchid)"><img src="PicturesPlants\Muguet.jpg" style="height: 30px; margin-left: 10px;"><p style="margin-left: 10px;">Muguet</p><Span style="visibility: hidden; width: 40px;"></Span><div style="display: flex; flex-direction: column;"><p style="margin: 0px;">Date:06/10</p><p style="margin: 0px;">Taille: 56ko</p></div></div>
+  <div id="Photo3" class="Photos" onclick="OpenPhoto(BigPissenlit,BigMuguet,BigSunflower,BigRose,BigOrchid)"><img src="PicturesPlants\Pissenlit.jpg" style="height: 26px; margin-left: 10px;"><p style="margin-left: 10px;">Pissenlit</p><Span style="visibility: hidden; width: 40px;"></Span><div style="display: flex; flex-direction: column;"><p style="margin: 0px;">Date:06/10</p><p style="margin: 0px;">Taille: 56ko</p></div></div>
+  <div id="Photo4" class="Photos" onclick="OpenPhoto(BigRose,BigMuguet,BigSunflower,BigPissenlit,BigOrchid)"><img src="PicturesPlants\Rose.jpg" style="height: 55px; margin-left: 10px;"><p style="margin-left: 10px;">Rose</p><Span style="visibility: hidden; width: 40px;"></Span><div style="display: flex; flex-direction: column;"><p style="margin: 0px;">Date:06/10</p><p style="margin: 0px;">Taille: 56ko</p></div></div>
+  <div id="Photo5" class="Photos" onclick="OpenPhoto(BigOrchid,BigMuguet,BigSunflower,BigPissenlit,BigRose)"><img src="PicturesPlants\Orchid.jpg" style="height: 42px; margin-left: 10px;"><p style="margin-left: 10px;">Orchid</p><Span style="visibility: hidden; width: 40px;"></Span><div style="display: flex; flex-direction: column;"><p style="margin: 0px;">Date:06/10</p><p style="margin: 0px;">Taille: 56ko</p></div></div>
+ </div>
+  <div id="BigSunflower" style="height: max-content;width: max-content;"><img src="PicturesPlants\Photo1.jpg"></div>
+  <div id="BigMuguet" style="height: 10rem;width: 10rem; box-sizing: border-box;"><img src="PicturesPlants\Muguet.jpg"></div>
+  <div id="BigPissenlit" style="height: 100%;width: 100%;"><img src="PicturesPlants\Pissenlit.jpg"></div>
+  <div id="BigRose" style="height: 100%;width: 100%;"><img src="PicturesPlants\Rose.jpg"></div>
+  <div id="BigOrchid" style="height: 100%;width: 100%;"><img src="PicturesPlants\Orchid.jpg"></div>
+</div>
+
 </div>
 </div>
     <script src="index.js"></script>

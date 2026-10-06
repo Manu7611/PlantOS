@@ -8,6 +8,11 @@ const screen = document.getElementById("screen");
 const CalcContain = document.getElementById("MyCalc");
 document.getElementById("Sombre").checked = false;
 document.getElementById("google").value = ""
+document.getElementById("BigSunflower").style.display = "none"
+document.getElementById("BigMuguet").style.display = "none"
+document.getElementById("BigRose").style.display = "none"
+document.getElementById("BigOrchid").style.display = "none"
+document.getElementById("BigPissenlit").style.display = "none"
 
 let resultat = "";
 let Timing = 6;
@@ -57,13 +62,14 @@ function CloseWindows(Closest) {
 function OpenWindows(Openest) {
     Openest.style.display = "flex";
 }
-function ZindexUp(WichID , NoId1 , NoId2 , NoId3 , Noid4) {
+function ZindexUp(WichID , NoId1 , NoId2 , NoId3 , Noid4 , NoId5) {
     const TestIndex = WichID.style.zIndex;
     WichID.style.zIndex = 20;
     NoId1.style.zIndex = 0;
     NoId2.style.zIndex = 0;
     NoId3.style.zIndex = 0;
     Noid4.style.zIndex = 0;
+    NoId5.style.zIndex = 0;
 }
 var content = [
     {
@@ -175,4 +181,12 @@ function BlackTheme() {
             document.body.style.backgroundImage = "url('img/Wallpaper.jpg')";
         }
     });
+}
+function OpenPhoto(MyPhoto , Photo1 , Photo2, Photo3, Photo4){
+    MyPhoto.style.display = "flex";
+    Photo1.style.display = "none";
+    Photo2.style.display = "none";
+    Photo3.style.display = "none";
+    Photo4.style.display = "none";
+    document.getElementById("InitialPhotos").style.display = "none"
 }

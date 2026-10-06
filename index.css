@@ -154,3 +154,11 @@ body {
     min-height: 1.2em;    
     text-align: center;
 }
+.Photos {
+    display: flex;
+     flex-direction: row;
+    align-self: flex-start;
+    width: 100%; border: 2px solid black;
+    padding-top: 10px; 
+    box-sizing: border-box;
+}
