@@ -84,7 +84,12 @@ body {
 .CloseButton:hover {
     background-color: red;
 }
-
+.Return {
+    transition: background-color 0.2s;
+}
+.Return:hover{
+    background-color: blue;
+}
 .close {
     display: flex;
     align-items: flex-end;
