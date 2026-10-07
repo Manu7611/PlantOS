@@ -8,11 +8,6 @@ const screen = document.getElementById("screen");
 const CalcContain = document.getElementById("MyCalc");
 document.getElementById("Sombre").checked = false;
 document.getElementById("google").value = ""
-document.getElementById("BigSunflower").style.display = "none"
-document.getElementById("BigMuguet").style.display = "none"
-document.getElementById("BigRose").style.display = "none"
-document.getElementById("BigOrchid").style.display = "none"
-document.getElementById("BigPissenlit").style.display = "none"
 
 let resultat = "";
 let Timing = 6;
@@ -182,6 +177,31 @@ function BlackTheme() {
         }
     });
 }
+
+var PictureApp = [
+    {
+        title: "PictureApp",
+        Date: "07/10/26",
+        content: `<div id="InitialPhotos" style="display: flex; flex-direction: column; justify-content: center; align-items: center; background-color: aliceblue;">
+  <div class="Photos" style="padding-top: 0px; border-radius: 15%;"><p> This is a wiki of pictures of plants !</p></div>
+  <div id="Photo1" class="Photos" onclick="OpenPhoto(BigSunflower,BigMuguet,BigPissenlit,BigRose,BigOrchid)"><img src="PicturesPlants/Photo1.jpg" style="height: 2.5rem; margin-left: 0.625rem;"><p style="margin-left: 0.625rem;">SunFlower</p><Span style="visibility: hidden; width: 2.5rem;"></Span><div style="display: flex; flex-direction: column;"><p style="margin: 0rem;">Date:06/10</p><p style="margin: 0rem;">Taille: 56ko</p></div></div>
+  <div id="Photo2" class="Photos" onclick="OpenPhoto(BigMuguet,BigSunflower,BigPissenlit,BigRose,BigOrchid)"><img src="PicturesPlants/Muguet.jpg" style="height: 1.875rem; margin-left: 0.625rem;"><p style="margin-left: 0.625rem;">Muguet</p><Span style="visibility: hidden; width: 2.5rem;"></Span><div style="display: flex; flex-direction: column;"><p style="margin: 0rem;">Date:06/10</p><p style="margin: 0rem;">Taille: 2.1Mo</p></div></div>
+  <div id="Photo3" class="Photos" onclick="OpenPhoto(BigPissenlit,BigMuguet,BigSunflower,BigRose,BigOrchid)"><img src="PicturesPlants/Pissenlit.jpg" style="height: 1.625rem; margin-left: 0.625rem;"><p style="margin-left: 0.625rem;">Pissenlit</p><Span style="visibility: hidden; width: 2.5rem;"></Span><div style="display: flex; flex-direction: column;"><p style="margin: 0rem;">Date:06/10</p><p style="margin: 0rem;">Taille: 2.2Mo</p></div></div>
+  <div id="Photo4" class="Photos" onclick="OpenPhoto(BigRose,BigMuguet,BigSunflower,BigPissenlit,BigOrchid)"><img src="PicturesPlants/Rose.jpg" style="height: 3.438rem; margin-left: 0.625rem;"><p style="margin-left: 0.625rem">Rose</p><Span style="visibility: hidden; width: 1.75rem;"></Span><div style="display: flex; flex-direction: column;"><p style="margin: 0rem;">Date:06/10</p><p style="margin: 0rem;">Taille: 0.8Mo</p></div></div>
+  <div id="Photo5" class="Photos" onclick="OpenPhoto(BigOrchid,BigMuguet,BigSunflower,BigPissenlit,BigRose)"><img src="PicturesPlants/Orchid.jpg" style="height: 2.625rem; margin-left: 0.625rem;"><p style="margin-left: 0.625rem">Orchid</p><Span style="visibility: hidden; width: 2.063rem;"></Span><div style="display: flex; flex-direction: column;"><p style="margin: 0rem;">Date:06/10</p><p style="margin: 0prem;">Taille: 1.4Mo</p></div></div>
+ </div>
+  <div id="BigSunflower" class="BigPhoto" style="display:none;"><img src="PicturesPlants/Photo1.jpg"></div>
+  <div id="BigMuguet" class="BigPhoto" style="height: 10rem;width: 10rem; box-sizing: border-box;display:none;"><img src="PicturesPlants/Muguet.jpg"></div>
+  <div id="BigPissenlit" class="BigPhoto" style="display:none;"><img src="PicturesPlants/Pissenlit.jpg"></div>
+  <div id="BigRose" class="BigPhoto" style="display:none;"><img src="PicturesPlants/Rose.jpg"></div>
+  <div id="BigOrchid" class="BigPhoto" style="display:none;"><img src="PicturesPlants/Orchid.jpg"></div>`
+    }
+]
+
+function Picture(index){
+    document.getElementById("MyPictures").innerHTML = PictureApp[index].content;
+}
+Picture(0)
 function OpenPhoto(MyPhoto , Photo1 , Photo2, Photo3, Photo4){
     MyPhoto.style.display = "flex";
     Photo1.style.display = "none";

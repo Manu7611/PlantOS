@@ -76,9 +76,11 @@ body {
     align-items: center;
 }
 .CloseButton {
-    padding-left: 10px;
+    padding-left: 15px;
     padding-right: 15px;
     border: solid black 0.001rem;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
     transition: background-color 0.2s;
 }
 .CloseButton:hover {
@@ -166,6 +168,7 @@ body {
     width: 100%; border: 2px solid black;
     padding-top: 0.625rem; 
     box-sizing: border-box;
+    cursor: pointer;
 }
 .BigPhoto{
     width: 18.75rem;
