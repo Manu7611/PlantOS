@@ -159,6 +159,23 @@ body {
      flex-direction: row;
     align-self: flex-start;
     width: 100%; border: 2px solid black;
-    padding-top: 10px; 
+    padding-top: 0.625rem; 
     box-sizing: border-box;
+}
+.BigPhoto{
+    width: 18.75rem;
+    height: 18.75rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.BigPhoto img{
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+.BigPhoto input{
+    display: flex;
+    align-self: flex-start;
 }

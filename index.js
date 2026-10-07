@@ -190,3 +190,11 @@ function OpenPhoto(MyPhoto , Photo1 , Photo2, Photo3, Photo4){
     Photo4.style.display = "none";
     document.getElementById("InitialPhotos").style.display = "none"
 }
+function ReturnPhoto(MyBigPhoto){
+    FullScreen=document.querySelectorAll(".BigPhoto")
+    FullScreen.forEach(function(Photo){
+        Photo.style.display = "none";
+        document.getElementById("InitialPhotos").style.display = "flex";
+    })
+
+}
