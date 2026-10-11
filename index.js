@@ -8,6 +8,7 @@ const screen = document.getElementById("screen");
 const CalcContain = document.getElementById("MyCalc");
 document.getElementById("Sombre").checked = false;
 document.getElementById("google").value = "";
+var NumberGoal = ""
 
 let resultat = "";
 let Timing = 6;
@@ -223,7 +224,7 @@ function ReturnPhoto(MyBigPhoto){
 }
 
 function InitGuess(){
-    var NumberGoal = Math.floor(Math.random() * 10) 
+    NumberGoal = Math.floor(Math.random() * 20) 
 }
 function GuessGame(){
     if (document.getElementById("MyNumber").value == NumberGoal) {
@@ -231,7 +232,7 @@ function GuessGame(){
         document.getElementById("GameGood").style.display = "flex"
     }
     else {
-         document.getElementById("ResultAnnounced").innerHTML = "You Loose !"
+         document.getElementById("ResultAnnounced").innerHTML = "You Loose ! , The result was "+ NumberGoal;
         document.getElementById("GameBad").style.display = "flex"
     }
 }
