@@ -62,7 +62,7 @@ body {
     border: 0.313rem solid black;
     border-radius: 2em;
     background-color: bisque;
-    width: 100%;
+    width: 99%;
 }
 .Handle {
     display: flex;

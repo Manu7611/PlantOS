@@ -7,7 +7,7 @@ const NoteBar = document.getElementById("NoteBar");
 const screen = document.getElementById("screen");
 const CalcContain = document.getElementById("MyCalc");
 document.getElementById("Sombre").checked = false;
-document.getElementById("google").value = ""
+document.getElementById("google").value = "";
 
 let resultat = "";
 let Timing = 6;
@@ -35,7 +35,6 @@ let fenetreActive = null;
 
 function attraper(handle, e) {
     fenetreActive = handle.parentElement;
-    fenetreActive.style.transform = "none";
     actif = true;
     dx = e.clientX - fenetreActive.offsetLeft;
     dy = e.clientY - fenetreActive.offsetTop;
@@ -57,7 +56,7 @@ function CloseWindows(Closest) {
 function OpenWindows(Openest) {
     Openest.style.display = "flex";
 }
-function ZindexUp(WichID , NoId1 , NoId2 , NoId3 , Noid4 , NoId5) {
+function ZindexUp(WichID , NoId1 , NoId2 , NoId3 , Noid4 , NoId5 , NoId6) {
     const TestIndex = WichID.style.zIndex;
     WichID.style.zIndex = 20;
     NoId1.style.zIndex = 0;
@@ -65,6 +64,7 @@ function ZindexUp(WichID , NoId1 , NoId2 , NoId3 , Noid4 , NoId5) {
     NoId3.style.zIndex = 0;
     Noid4.style.zIndex = 0;
     NoId5.style.zIndex = 0;
+    NoId6.style.zIndex = 0;
 }
 var content = [
     {
@@ -159,7 +159,7 @@ var Cal = [
 function search(){
     const SaisieUtilisateur = document.getElementById("google").value;
     researchhh = GoogleWEB + SaisieUtilisateur;
-    window.open(researchhh ,'_blank')
+    window.open(researchhh ,'_blank');
 }
 function BlackTheme() {
     let theme = document.querySelectorAll(".DarkMode")
@@ -210,7 +210,7 @@ function OpenPhoto(MyPhoto , Photo1 , Photo2, Photo3, Photo4){
     Photo3.style.display = "none";
     Photo4.style.display = "none";
     document.getElementById("InitialPhotos").style.display = "none";
-    document.getElementById("PicturesHandleText").innerHTML = MyPhoto.dataset.valeur
+    document.getElementById("PicturesHandleText").innerHTML = MyPhoto.dataset.valeur;
 }
 function ReturnPhoto(MyBigPhoto){
     FullScreen=document.querySelectorAll(".BigPhoto")
@@ -218,6 +218,20 @@ function ReturnPhoto(MyBigPhoto){
         Photo.style.display = "none";
     })
     document.getElementById("InitialPhotos").style.display = "flex";
-    document.getElementById("PicturesHandleText").innerHTML = "Plants Pictures"
+    document.getElementById("PicturesHandleText").innerHTML = "Plants Pictures";
 
+}
+
+function InitGuess(){
+    var NumberGoal = Math.floor(Math.random() * 10) 
+}
+function GuessGame(){
+    if (document.getElementById("MyNumber").value == NumberGoal) {
+        document.getElementById("ResultAnnounced").innerHTML = "You Win !"
+        document.getElementById("GameGood").style.display = "flex"
+    }
+    else {
+         document.getElementById("ResultAnnounced").innerHTML = "You Loose !"
+        document.getElementById("GameBad").style.display = "flex"
+    }
 }
