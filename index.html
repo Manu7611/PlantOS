@@ -49,12 +49,12 @@
  </div>
  <div id="MyCalc"></div>
 </div>
-      <div id="WindowsWeb" class="Windows" style="display: none; background-color: yellow;" onclick="ZindexUp(WindowsCalc , Windows1 , WindowsNote , WindowsWeb , WindowsSettings, WindowsPictures , WindowsGuess)">
+      <div id="WindowsWeb" class="Windows" style="display: none; background-color: yellow;" onclick="ZindexUp(WindowsWeb ,WindowsCalc , Windows1 , WindowsNote , WindowsSettings, WindowsPictures , WindowsGuess)">
  <div id="WebHandle" class="Handle DarkMode" onpointerdown="attraper(this, event)">
    Web<span style="visibility: hidden; width: 4.688rem;"></span><div class="CloseButton" onclick="CloseWindows(WindowsWeb)">X</div>
  </div>
  <div id="MyWeb">
-  <div style="display: flex; flex-direction: row;"><input type="text" id="google" class="DarkMode" style="display: flex; align-items: flex-start; border: solid black 2px; padding: 0.5rem ; margin: 0.25rem; margin-top: 0.5rem; border-radius: 10px;"><div style=" display:flex; align-items: flex-end; margin: 0.25rem; margin-top: 0.5rem; border: solid black 2px; cursor: pointer;border-radius: 50%; background-color: aliceblue; padding: 0.5rem" onclick="search()" class="DarkMode">OK</div></div>
+  <div style="display: flex; flex-direction: row;"><input type="text" id="google" class="DarkMode" style="display: flex; align-items: flex-start; border: solid black 0.125rem; padding: 0.5rem ; margin: 0.25rem; margin-top: 0.5rem; border-radius: 0.625rem;"><div style=" display:flex; align-items: flex-end; margin: 0.25rem; margin-top: 0.5rem; border: solid black 2px; cursor: pointer;border-radius: 50%; background-color: aliceblue; padding: 0.5rem" onclick="search()" class="DarkMode">OK</div></div>
  </div>
 </div>
       <div id="WindowsSettings" class="Windows" style="display: none; background-color: #ABC257;" onclick="ZindexUp(WindowsSettings , WindowsCalc , Windows1 , WindowsNote , WindowsWeb, WindowsPictures , WindowsGuess)">
@@ -67,21 +67,17 @@
  </div>
 </div>
 <div id="WindowsPictures" class="Windows" style="display: none; background-color: #ABC257;" onclick="ZindexUp(WindowsPictures , WindowsCalc , Windows1 , WindowsNote , WindowsWeb, WindowsSettings , WindowsGuess)">
- <div id="PicturesHandle" class="Handle DarkMode" onpointerdown="attraper(this, event)" style="display: flex;align-content: space-between; justify-content: space-between;"><input style="border-top-right-radius: 1rem;padding-right: 0.938rem; border-bottom-right-radius: 1rem;" class="Return" type="button" value="<--" onclick="ReturnPhoto()">
+ <div id="PicturesHandle" class="Handle DarkMode" onpointerdown="attraper(this, event)" style="display: flex;align-content: space-between; justify-content: space-between; margin-bottom: 10px;"><p style="border-top-right-radius: 1rem;padding-right: 0.938rem; border-bottom-right-radius: 1rem;" class="Return" onclick="ReturnPhoto()"><--</p>
    <p id="PicturesHandleText">Plants Pictures</p><div class="CloseButton" onclick="CloseWindows(WindowsPictures)">X</div>
  </div>
- <div id="MyPictures">
+ <div id="MyPictures" class="DarkMode">
 </div>
 </div>
 <div id="WindowsGuess" class="Windows" style="display: none; background-color: green;" onclick="ZindexUp(WindowsGuess ,WindowsCalc, Windows1 , WindowsNote , WindowsWeb , WindowsSettings, WindowsPictures)">
- <div id="GuessHandle" class="Handle DarkMode" onpointerdown="attraper(this, event)">
-   Guess Number<span style="visibility: hidden; width: 1rem;"></span><div class="CloseButton" onclick="CloseWindows(WindowsGuess)">X</div>
+ <div id="GuessHandle" class="Handle DarkMode" onpointerdown="attraper(this, event)" style="display: flex;align-content: space-between; justify-content: space-between;"><p class="Return" style="border-top-right-radius: 1rem;padding-right: 0.938rem; border-bottom-right-radius: 1rem;" onclick="InitGuess()">Reset</p>
+   <p>Guess Number</p><span style="visibility: hidden; width: 1rem;"></span><div class="CloseButton" onclick="CloseWindows(WindowsGuess)">X</div>
  </div>
  <div id="MyGuess">
-  <div style="display: flex; flex-direction: column;"><p style="display: flex; border: solid black 2px; padding: 5px; " onclick="GuessGame()">Choose a Number ! Between 1-20</p>
-    <div style="display: flex; flex-direction: row;"><input type="number" id="MyNumber"><img src="Photos/Good" id="GameGood" style="display: none;"><img src="Photo/Bad" id="GameBad" style="display: none;"></div>
-    <p id="ResultAnnounced">And the result is...</p>
-  </div>
  </div>
 </div>
 </div>

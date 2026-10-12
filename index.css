@@ -89,6 +89,7 @@ body {
 }
 .Return {
     transition: background-color 0.2s;
+    border: 0.001rem solid black;
 }
 .Return:hover{
     background-color: blue;

@@ -170,11 +170,18 @@ function BlackTheme() {
             document.body.style.color = "white";
             document.body.style.backgroundImage = "url('img/DarkWallpaper.jpg')";
             document.getElementById("google").style.color = "white";
+            document.getElementById("EnterGuess").style.color = "white";
+            document.getElementById("MyNumber").style.color = "white";
+
         }
         else{
             themes.style.backgroundColor ="aliceblue";
             document.body.style.color = "black";
             document.body.style.backgroundImage = "url('img/Wallpaper.jpg')";
+            document.getElementById("google").style.color = "black";
+            document.getElementById("EnterGuess").style.color = "black";
+            document.getElementById("MyNumber").style.color = "black";
+
         }
     });
 }
@@ -183,7 +190,7 @@ var PictureApp = [
     {
         title: "PictureApp",
         Date: "07/10/26",
-        content: `<div id="InitialPhotos" style="display: flex; flex-direction: column; justify-content: center; align-items: center; background-color: aliceblue;">
+        content: `<div id="InitialPhotos" style="display: flex; flex-direction: column; justify-content: center; align-items: center; background-color: aliceblue;" class="DarkMode">
   <div class="Photos" style="padding-top: 0px; border-radius: 15%;"><p> This is a wiki of pictures of plants !</p></div>
   <div id="Photo1" class="Photos" onclick="OpenPhoto(BigSunflower,BigMuguet,BigPissenlit,BigRose,BigOrchid)"><img src="PicturesPlants/Photo1.jpg" style="height: 2.5rem; margin-left: 0.625rem;"><p style="margin-left: 0.625rem;">SunFlower</p><Span style="visibility: hidden; width: 6.25rem;"></Span><div style="display: flex; flex-direction: column;"><p style="margin: 0rem;">Date:06/10</p><p style="margin: 0rem;">Taille: 56ko</p></div></div>
   <div id="Photo2" class="Photos" onclick="OpenPhoto(BigMuguet,BigSunflower,BigPissenlit,BigRose,BigOrchid)"><img src="PicturesPlants/Muguet.jpg" style="height: 1.875rem; margin-left: 0.625rem;"><p style="margin-left: 0.625rem;">Lily of the valley</p><Span style="visibility: hidden; width: 2.5rem;"></Span><div style="display: flex; flex-direction: column;"><p style="margin: 0rem;">Date:06/10</p><p style="margin: 0rem;">Taille: 2.1Mo</p></div></div>
@@ -225,14 +232,33 @@ function ReturnPhoto(MyBigPhoto){
 
 function InitGuess(){
     NumberGoal = Math.floor(Math.random() * 20) 
+    document.getElementById("ResultAnnounced").innerHTML = "And the result is..."
+    document.getElementById("MyNumber").value = 0
 }
 function GuessGame(){
     if (document.getElementById("MyNumber").value == NumberGoal) {
         document.getElementById("ResultAnnounced").innerHTML = "You Win !"
         document.getElementById("GameGood").style.display = "flex"
+        document.getElementById("GameBad").style.display = "none"
     }
     else {
          document.getElementById("ResultAnnounced").innerHTML = "You Loose ! , The result was "+ NumberGoal;
         document.getElementById("GameBad").style.display = "flex"
+        document.getElementById("GameGood").style.display = "none"
     }
 }
+
+var GuessApp = [
+    {
+        title: "GuessContent",
+        Date: "12/10/26",
+        content: `<div style="display: flex; flex-direction: column; align-items: center;"><p style="display: flex; border: solid black 0.125rem; padding: 0.313rem;border-radius: 1rem; padding: 0.625rem;background-color: aliceblue; " class="DarkMode">Choose a Number ! Between 1-20</p>
+    <div style="display: flex; flex-direction: row;"><input type="number" id="MyNumber" class="DarkMode"><input type="button" value="Enter" onclick="GuessGame()" style="margin-left: 0.313rem;" class="DarkMode" id="EnterGuess"><img src="Photos/Good.png" id="GameGood" style="display: none;"><img src="Photos/Bad.png" id="GameBad" style="display: none;"></div>
+    <p id="ResultAnnounced" style="background-color: aliceblue; padding: 0.313rem;" class="DarkMode">And the result is...</p>
+  </div>`
+    }
+]
+function Guess(index){
+    document.getElementById("MyGuess").innerHTML = GuessApp[index].content;
+}
+Guess(0);
