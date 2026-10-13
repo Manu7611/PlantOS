@@ -8,6 +8,7 @@ const screen = document.getElementById("screen");
 const CalcContain = document.getElementById("MyCalc");
 document.getElementById("Sombre").checked = false;
 document.getElementById("google").value = "";
+var monIntervalle = null;
 var Minutes = 0;
 var NumberGoal = ""
 var TimeStart = 0;
@@ -267,12 +268,17 @@ function Guess(index){
 Guess(0);
 
 function InitChrono (){
+    if (document.getElementById("StartChrono").value == "Start"){
     TimeCurrent = 0
     Minutes = 0
     document.getElementById("Minutes").innerHTML= Minutes;
     TimeStart = Date.now()
-
-    setInterval(ActiveChrono,100)
+    MyInterval = setInterval(ActiveChrono,100)
+    document.getElementById("StartChrono").value = "Stop"
+    }
+    else {
+        clearInterval(MyInterval);
+    }
 }
 function ActiveChrono(){
     TimeCurrent = Date.now();
@@ -284,12 +290,12 @@ function ActiveChrono(){
         }
 }
 function ResetChrono(){
-    clearInterval(ActiveChrono)
+    clearInterval(MyInterval)
     document.getElementById("Minutes").innerHTML = "00"
     document.getElementById("Seconds").innerHTML = "00"
     TimeCurrent = 0
     TimeStart= 0
 }
 function StopChrono(){
-    clearInterval(ActiveChrono);
+    
 }

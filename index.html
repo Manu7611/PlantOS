@@ -21,7 +21,7 @@
     <img src="img\WifiIcon.png" style="height: 1em; width: 1.2em;"></div>
     </div>
     <div id="apps" style="justify-content: flex-start; align-items: flex-start;">
-      <div id=Icons style="display: flex; align-items: center; flex-direction: column;"><img src="img\Notes.png" style="height: 32px; width: 32px; justify-content: flex-start; flex-direction: column; display: flex;" onclick="OpenWindows(WindowsNote)">
+      <div id=Icons style="display: flex; align-items: center; flex-direction: column; color:aliceblue"><img src="img\Notes.png" style="height: 32px; width: 32px; justify-content: flex-start; flex-direction: column; display: flex;" onclick="OpenWindows(WindowsNote)">
       <p>Notes</p>
       <img src="img\Calc.png" style="height: 32px; width: 32px; justify-content: flex-start; flex-direction: column; display: flex;" onclick="OpenWindows(WindowsCalc)">
       <p>Calc</p>
@@ -87,9 +87,9 @@
    <p>Chronometer</p><span style="visibility: hidden; width: 1rem;"></span><div class="CloseButton" onclick="CloseWindows(WindowsTime)">X</div>
  </div>
  <div id="MyTime" style="display: flex; flex-direction: column;">
-  <p style="display: flex;justify-content: center; border: 1px solid black; border-radius: 1rem; background-color: aliceblue; margin: 5px; padding: 5px;" class="DarkMode">This is the Chronometer !</p>
-  <div style="display: flex; flex-direction: row; justify-content: center;"><input type="button" value="Start" onclick="InitChrono ()"><input type="button" value="Stop" onclick="StopChrono()"></div>
-  <div style="display: flex; flex-direction: row; justify-content: center; border: 1px solid black; border-radius: 1rem; background-color: aliceblue; margin: 5px;" class="DarkMode"><p id="Minutes" style="padding-right: 5px;padding-left: 5px;">00</p><p>Min</p><p id="Seconds" style="padding-right: 5px;padding-left: 5px;">00</p><p> Sec </p></div>
+  <p style="display: flex;justify-content: center; border: 0.063rem solid black; border-radius: 1rem; background-color: aliceblue; margin: 0.313rem; padding: 0.313rem;" class="DarkMode">This is the Chronometer !</p>
+  <div style="display: flex; flex-direction: row; justify-content: center;"><input type="button" id="StartChrono" value="Start" onclick="InitChrono()" style="width:100%; background-color: darkslategray; border-radius: 1rem;;"></div>
+  <div style="display: flex; flex-direction: row; justify-content: center; border: 0.063rem solid black; border-radius: 1rem; background-color: aliceblue; margin: 5px;" class="DarkMode"><p id="Minutes" style="padding-right: 0.313rem;padding-left: 0.313rem;">00</p><p>Min</p><p id="Seconds" style="padding-right: 5px;padding-left: 5px;">00</p><p> Sec </p></div>
  </div>
 </div>
 </div>
