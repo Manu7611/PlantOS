@@ -278,6 +278,7 @@ function InitChrono (){
     }
     else {
         clearInterval(MyInterval);
+        document.getElementById("StartChrono").value = "Start"
     }
 }
 function ActiveChrono(){
@@ -286,7 +287,7 @@ function ActiveChrono(){
         if ((TimeCurrent - TimeStart)/1000>=60) {
             Minutes = Minutes + 1
             document.getElementById("Minutes").innerHTML= Minutes;
-            InitChrono()
+            TimeStart = Date.now();
         }
 }
 function ResetChrono(){
