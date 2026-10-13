@@ -8,8 +8,10 @@ const screen = document.getElementById("screen");
 const CalcContain = document.getElementById("MyCalc");
 document.getElementById("Sombre").checked = false;
 document.getElementById("google").value = "";
+var Minutes = 0;
 var NumberGoal = ""
-
+var TimeStart = 0;
+var TimeCurrent = 0;
 let resultat = "";
 let Timing = 6;
 let research = "";
@@ -57,15 +59,16 @@ function CloseWindows(Closest) {
 function OpenWindows(Openest) {
     Openest.style.display = "flex";
 }
-function ZindexUp(WichID , NoId1 , NoId2 , NoId3 , Noid4 , NoId5 , NoId6) {
+function ZindexUp(WichID , NoId1 , NoId2 , NoId3 , NoId4 , NoId5 , NoId6 , NoId7) {
     const TestIndex = WichID.style.zIndex;
     WichID.style.zIndex = 20;
     NoId1.style.zIndex = 0;
     NoId2.style.zIndex = 0;
     NoId3.style.zIndex = 0;
-    Noid4.style.zIndex = 0;
+    NoId4.style.zIndex = 0;
     NoId5.style.zIndex = 0;
     NoId6.style.zIndex = 0;
+    NoId7.style.zIndex = 0;
 }
 var content = [
     {
@@ -262,3 +265,31 @@ function Guess(index){
     document.getElementById("MyGuess").innerHTML = GuessApp[index].content;
 }
 Guess(0);
+
+function InitChrono (){
+    TimeCurrent = 0
+    Minutes = 0
+    document.getElementById("Minutes").innerHTML= Minutes;
+    TimeStart = Date.now()
+
+    setInterval(ActiveChrono,100)
+}
+function ActiveChrono(){
+    TimeCurrent = Date.now();
+    document.getElementById("Seconds").innerHTML = Math.floor((TimeCurrent - TimeStart)/1000);
+        if ((TimeCurrent - TimeStart)/1000>=60) {
+            Minutes = Minutes + 1
+            document.getElementById("Minutes").innerHTML= Minutes;
+            InitChrono()
+        }
+}
+function ResetChrono(){
+    clearInterval(ActiveChrono)
+    document.getElementById("Minutes").innerHTML = "00"
+    document.getElementById("Seconds").innerHTML = "00"
+    TimeCurrent = 0
+    TimeStart= 0
+}
+function StopChrono(){
+    clearInterval(ActiveChrono);
+}
