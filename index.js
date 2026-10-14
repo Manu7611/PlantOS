@@ -8,6 +8,7 @@ const screen = document.getElementById("screen");
 const CalcContain = document.getElementById("MyCalc");
 document.getElementById("Sombre").checked = false;
 document.getElementById("google").value = "";
+var CacheTime = 0
 var monIntervalle = null;
 var Minutes = 0;
 var NumberGoal = ""
@@ -269,21 +270,29 @@ Guess(0);
 
 function InitChrono (){
     if (document.getElementById("StartChrono").value == "Start"){
-    TimeCurrent = 0
-    Minutes = 0
-    document.getElementById("Minutes").innerHTML= Minutes;
-    TimeStart = Date.now()
-    MyInterval = setInterval(ActiveChrono,100)
-    document.getElementById("StartChrono").value = "Stop"
+        if ( CacheTime == 0){
+          TimeCurrent = 0
+          Minutes = 0
+          document.getElementById("Minutes").innerHTML= Minutes;
+          TimeStart = Date.now()
+          MyInterval = setInterval(ActiveChrono,100)
+          document.getElementById("StartChrono").value = "Stop"
+        }
+        else {
+            TimeStart = Date.now()
+          MyInterval = setInterval(ActiveChrono,100)
+          document.getElementById("StartChrono").value = "Stop"
+        }
     }
     else {
         clearInterval(MyInterval);
+        CacheTime = CacheTime + Math.floor((TimeCurrent - TimeStart)/1000);
         document.getElementById("StartChrono").value = "Start"
     }
 }
 function ActiveChrono(){
     TimeCurrent = Date.now();
-    document.getElementById("Seconds").innerHTML = Math.floor((TimeCurrent - TimeStart)/1000);
+    document.getElementById("Seconds").innerHTML = Math.floor(((TimeCurrent - TimeStart)/1000)+ CacheTime);
         if ((TimeCurrent - TimeStart)/1000>=60) {
             Minutes = Minutes + 1
             document.getElementById("Minutes").innerHTML= Minutes;
@@ -296,7 +305,6 @@ function ResetChrono(){
     document.getElementById("Seconds").innerHTML = "00"
     TimeCurrent = 0
     TimeStart= 0
-}
-function StopChrono(){
-    
+    CacheTime = 0
+    document.getElementById("StartChrono").value = "Start"
 }
