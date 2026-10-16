@@ -126,7 +126,7 @@ var Cal = [
         title: "Calculator",
         date: "28/09/26",
         content: `<div>
- <div id="CalcContainer" style="margin-top: 5px; display: flex; flex-direction: column; justify-content: center; align-items: center; background-color: green">
+ <div id="CalcContainer" style="margin-top: 5px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
   <div id="screen" class="DarkMode" style="margin: 0.5rem; border: black solid 0.188rem; min-height: 2.5rem; width: 100%; box-sizing: border-box; justify-content: center; align-items: center; background-color: aliceblue ; border-radius: 10px;">Click on AC between each operation</div>
    <div id="smthg" style="display: flex; flex-direction: row; justify-content: center;">
   <div id="column1" class="ColumnCalc">

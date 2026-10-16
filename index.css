@@ -1,3 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+}
 body {
     background-image: url("img/Wallpaper.jpg");
     background-size: cover;
@@ -8,6 +16,7 @@ body {
     align-items: stretch;    
     background-repeat: no-repeat;
     overflow: hidden;
+    color: #2d3748;
 }
 #load {
     position: absolute;
@@ -32,12 +41,15 @@ body {
     flex-direction: column;
     width: fit-content;
     z-index: 1;
-    border: 0.1em solid black;
     border-radius: 5%;
     align-items: center;
     justify-content: center;
     padding: 1%;
-    background-color: white;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
 }
 #loadingBackground{
     position: absolute;
@@ -59,10 +71,16 @@ body {
     flex-direction: row;
     justify-content: space-between;
     color: black;
-    border: 0.313rem solid black;
     border-radius: 2em;
     background-color: bisque;
     width: 99%;
+    background: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+    font-weight: 600;
 }
 .Handle {
     display: flex;
@@ -106,7 +124,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 1em;
+    padding: 2rem;
 }
 #NoteContainer {
     display: flex;
@@ -188,4 +206,10 @@ body {
 .BigPhoto input{
     display: flex;
     align-self: flex-start;
+}
+#Icons img{
+    margin-top: 25px;
+}
+#Icons p{
+    margin-top: 15px;
 }
