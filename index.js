@@ -61,16 +61,13 @@ function CloseWindows(Closest) {
 function OpenWindows(Openest) {
     Openest.style.display = "flex";
 }
-function ZindexUp(WichID , NoId1 , NoId2 , NoId3 , NoId4 , NoId5 , NoId6 , NoId7) {
-    const TestIndex = WichID.style.zIndex;
+function ZindexUp(WichID) {
+    const TestIndex = document.querySelectorAll(".Windows")
+    TestIndex.forEach(function UpWindows(UpWin){
+        UpWin.style.zIndex = 0;
+    })
     WichID.style.zIndex = 20;
-    NoId1.style.zIndex = 0;
-    NoId2.style.zIndex = 0;
-    NoId3.style.zIndex = 0;
-    NoId4.style.zIndex = 0;
-    NoId5.style.zIndex = 0;
-    NoId6.style.zIndex = 0;
-    NoId7.style.zIndex = 0;
+
 }
 var content = [
     {
