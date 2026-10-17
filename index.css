@@ -41,7 +41,7 @@ body {
     flex-direction: column;
     width: fit-content;
     z-index: 1;
-    border-radius: 5%;
+    border-radius: 1rem;
     align-items: center;
     justify-content: center;
     padding: 1%;
@@ -103,14 +103,14 @@ body {
     transition: background-color 0.2s;
 }
 .CloseButton:hover {
-    background-color: red;
+    background-color: #ffa19c;
 }
 .Return {
     transition: background-color 0.2s;
     border: 0.001rem solid black;
 }
 .Return:hover{
-    background-color: blue;
+    background-color: #B3EBF2;
 }
 .close {
     display: flex;

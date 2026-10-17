@@ -308,3 +308,19 @@ function ResetChrono(){
     CacheTime = 0
     document.getElementById("StartChrono").value = "Start"
 }
+function Refresh(){
+    location.reload();
+}
+var TimeApp = [
+    {
+        title: "TimeApp",
+        date: "17/10/26",
+        content: `<p style="display: flex;justify-content: center; border: 0.063rem solid black; border-radius: 1rem; background-color: aliceblue; margin: 0.313rem; padding: 0.313rem; margin-top: 1rem;" class="DarkMode">This is the Chronometer !</p>
+  <div style="display: flex; flex-direction: row; justify-content: center; margin:1rem"><input type="button" id="StartChrono" value="Start" onclick="InitChrono()" style="width:100%; background-color: darkslategray; border-radius: 1rem;;"></div>
+  <div style="display: flex; flex-direction: row; justify-content: center; border: 0.063rem solid black; border-radius: 1rem; background-color: aliceblue; margin: 5px;" class="DarkMode"><p id="Minutes" style="padding-right: 0.313rem;padding-left: 0.313rem;">00</p><p>Min</p><p id="Seconds" style="padding-right: 5px;padding-left: 5px;">00</p><p> Sec </p></div>`,
+    }
+]
+function Time(index){
+    document.getElementById("MyTime").innerHTML= TimeApp[index].content;
+}
+Time(0)
