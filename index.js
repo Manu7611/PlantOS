@@ -257,9 +257,9 @@ var GuessApp = [
     {
         title: "GuessContent",
         Date: "12/10/26",
-        content: `<div style="display: flex; flex-direction: column; align-items: center;"><p style="display: flex; border: solid black 0.125rem; padding: 0.313rem;border-radius: 1rem; padding: 0.625rem;background-color: aliceblue; " class="DarkMode">Choose a Number ! Between 1-20</p>
+        content: `<div style="display: flex; flex-direction: column; align-items: center;"><p style="display: flex; border: solid black 0.125rem; padding: 0.313rem;border-radius: 1rem; padding: 0.625rem;background-color: aliceblue;margin: 0.6rem; " class="DarkMode">Choose a Number ! Between 1-20</p>
     <div style="display: flex; flex-direction: row;"><input type="number" id="MyNumber" class="DarkMode"><input type="button" value="Enter" onclick="GuessGame()" style="margin-left: 0.313rem;" class="DarkMode" id="EnterGuess"><img src="Photos/Good.png" id="GameGood" style="display: none;"><img src="Photos/Bad.png" id="GameBad" style="display: none;"></div>
-    <p id="ResultAnnounced" style="background-color: aliceblue; padding: 0.313rem;" class="DarkMode">And the result is...</p>
+    <p id="ResultAnnounced" style="background-color: aliceblue; padding: 0.313rem;margin: 0.6rem;" class="DarkMode">And the result is...</p>
   </div>`
     }
 ]
