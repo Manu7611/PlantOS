@@ -63,7 +63,7 @@ body {
     left: 0;
     height: 100vh;
     z-index: 999;
-    background-image: url(img/screen.png)
+    background-image: url(img/screen.png);
 }
 
 #NavBar {
