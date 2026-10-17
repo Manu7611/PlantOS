@@ -19,13 +19,17 @@ It's a little project of OS website made with hackclub tuto : https://jams.hackc
 - A countdown and a Welcome page
 - A calculator
 - A Note app
+- A Web app
+- A Setting app (change theme or reset)
+- A Picture app to see plants
+- A tiny game where you guess a number
+- A Chronometer app with Start/Stop features
 - A fully functional time widget
 - A beautiful Plant theme
 - A system of draggable windows 
 
 ## Very Soon :
-- A web browser
-- A settings app to change the theme
+-Some new things !
 
 ## Photos :
 ![Welcome Image](Photos/Welcome.png)
